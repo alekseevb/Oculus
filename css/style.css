@@ -225,6 +225,7 @@ body {
 .tabs__content-img {
   grid-row: 1/-1;
   align-self: stretch;
+  object-fit: cover;
 }
 
 .tabs__content-box h3 {
@@ -328,8 +329,7 @@ body {
 
 .game__item-link {
   margin-top: auto;
-  border: 1px solid;
-  border-image: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%) 1;
+  background: linear-gradient(180deg, #BC10D8 0%, rgba(80, 0, 250, 0.93) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -579,4 +579,127 @@ body {
 
 .footer .nav {
   height: 102px;
+}
+
+@media (max-width:992px) {
+  .tabs {
+    display: block;
+  }
+
+  .tabs__btn {
+    display: block;
+    column-count: 2;
+  }
+
+  .tabs__btn-item {
+    display: block;
+  }
+
+  .game__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .accessories__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@media (max-width:820px) {
+  .equipment__box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .contacts__inner {
+    display: block;
+
+  }
+
+  .contacts__form {
+    margin-bottom: 20px;
+    ;
+  }
+}
+
+@media (max-width:768px) {
+  .title {
+    font-size: 66px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+
+  .features__titles {
+    display: block;
+  }
+}
+
+@media (max-width:648px) {
+
+  .buy-btn {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .top {
+    text-align: center;
+  }
+}
+
+@media (max-width:568px) {
+
+  .tabs__content-item {
+    display: block;
+  }
+
+  .video {
+    width: auto;
+    height: 220px;
+    margin: 20px auto;
+  }
+
+  .game__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .equipment__box {
+    display: block;
+  }
+
+  .equipment__box-img {
+    width: 100%;
+  }
+
+  .equipment__box-text {
+    margin-bottom: 20px;
+  }
+
+  .accessories__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width:420px) {
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .tabs__btn {
+    column-count: 1;
+  }
+
+  .features__text {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
 }
