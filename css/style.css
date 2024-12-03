@@ -60,6 +60,10 @@ body {
   color: #5C5C5E;
 }
 
+.body_fixed {
+  overflow: hidden;
+}
+
 .section__title {
   text-transform: uppercase;
   font-weight: 400;
@@ -70,11 +74,68 @@ body {
   border-bottom: 1px solid #CACAD6;
 }
 
+
+.burger-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  display: flex;
+  justify-content: end;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.burger-menu_hidden {
+  opacity: 1;
+  visibility: visible;
+}
+
+.burger-menu__content {
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.burger-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.burger-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.burger-menu__item {
+  font-size: 26px;
+}
+
+.burger-close {
+
+  height: 90px;
+  width: 90px;
+}
+
+
 .nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   height: 80px;
+}
+
+.menu-btn {
+  justify-self: flex-start;
+  display: none;
 }
 
 .menu {
@@ -581,6 +642,17 @@ body {
   height: 102px;
 }
 
+@media (max-width:1140px) {
+  .footer .menu {
+    display: none;
+  }
+
+  .footer .nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
 @media (max-width:992px) {
   .tabs {
     display: block;
@@ -622,6 +694,14 @@ body {
     margin-bottom: 20px;
     ;
   }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
 }
 
 @media (max-width:768px) {
@@ -654,6 +734,12 @@ body {
 
   .tabs__content-item {
     display: block;
+    height: 0;
+    position: relative;
+  }
+
+  .tabs__content-item_active {
+    height: auto;
   }
 
   .video {
@@ -683,6 +769,10 @@ body {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .nav {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
 }
 
 @media (max-width:420px) {
@@ -701,5 +791,10 @@ body {
   .features__text {
     font-size: 32px;
     margin-bottom: 20px;
+  }
+
+  .footer .nav {
+    display: flex;
+    flex-direction: column;
   }
 }
